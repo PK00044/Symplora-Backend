@@ -9,7 +9,7 @@ import {
 } from "./api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { Github } from "lucide-react";
 export default function App() {
   const [employees, setEmployees] = useState([]);
   const [leaves, setLeaves] = useState([]);
@@ -114,8 +114,17 @@ const handleLogin = async (e) => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6 text-blue-700">
-        Mini Leave Management System
+      <h1 className="text-3xl font-bold mb-6 text-blue-700 flex items-center justify-between">
+          Mini Leave Management System
+      <a
+          href="https://github.com/PK00044/Symplora-Backend/tree/main"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 ml-4 bg-gray-900 text-white px-4 py-2 rounded-full shadow-md hover:bg-gray-800 transition"
+          >
+          <Github className="w-5 h-5" />
+          GitHub
+        </a>
       </h1>
 
       {/* Add Employee */}
