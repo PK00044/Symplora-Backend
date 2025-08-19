@@ -9,13 +9,17 @@ import enum
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:5173",   # Vite local frontend
+    "https://symplora-frontend.vercel.app",  # My Vercel domain
+]
 # CORS setup for frontend (React on Vite at port 5173)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=origins,       
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],         # Allow all HTTP methods
+    allow_headers=["*"],         # Allow all headers
 )
 
 # SQLAlchemy setup
