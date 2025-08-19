@@ -10,18 +10,18 @@ import enum
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173",   # Vite local frontend
-    "https://symplora-frontend.vercel.app",  # My Vercel domain
+    "https://symplora-backend-m1irn6mel-pratham-kubsads-projects.vercel.app",  # your Vercel app
+    "http://localhost:5173",  # local dev (vite default)
 ]
+
 # CORS setup for frontend (React on Vite at port 5173)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,        
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # SQLAlchemy setup
 SQLALCHEMY_DATABASE_URL = "sqlite:///./leave_mgmt.db"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
