@@ -16,10 +16,10 @@ origins = [
 # CORS setup for frontend (React on Vite at port 5173)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,       
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],         # Allow all HTTP methods
-    allow_headers=["*"],         # Allow all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # SQLAlchemy setup
