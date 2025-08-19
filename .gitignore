@@ -1,0 +1,23 @@
+# --- FRONTEND ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+
+# --- BACKEND ---
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite3
+
+# Optional: Python virtual environments
+venv/
+env/
+ENV/
+
+# --- GENERAL ---
+.DS_Store
+*.log
+
+# VSCode settings
+.vscode/
